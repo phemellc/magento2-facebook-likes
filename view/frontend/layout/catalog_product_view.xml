@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Pheme. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Pheme\Facebook\Block\AsyncInit" name="pheme.facebook.async.init"
+                   template="Pheme_Facebook::async-init.phtml" ifconfig="pheme_facebook/general/active"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.social">
+            <block class="Pheme\Facebook\Block\Like" name="pheme.facebook.async.like"
+                   template="Pheme_Facebook::like.phtml" before="-" ifconfig="pheme_facebook/general/active"/>
+        </referenceContainer>
+    </body>
+</page>

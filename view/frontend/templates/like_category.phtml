@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © 2016 Pheme. All rights reserved.
+ */
+
+/*
+ * @var $this \Pheme\Facebook\Block\Like
+ */
+?>
+<?php
+    $width = $this->getWidth();
+    if (!empty(trim($width))) {
+        $width = "\n".'data-width="' . $width . '"';
+    }
+?>
+<div class="fb-like"
+     data-href="<?php echo $this->getUrlInterface()->getCurrentUrl(); ?>"
+     data-layout="<?php echo $this->getCategoryLayout() ?>"
+     data-action="<?php echo $this->getAction() ?>"
+     data-colorscheme="<?php echo $this->getColorScheme() ?>"
+     data-share="<?php echo $this->getShare() === "1" ? "true" : "false" ?>"
+     data-show-faces="<?php echo $this->getShowFaces() === "1" ? "true" : "false" ?>"<?php echo $width ?>>
+</div>
