@@ -5,11 +5,9 @@
 
 namespace Pheme\Facebook\Block;
 
-use Magento\Framework\UrlInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Like extends Template
 {
@@ -27,19 +25,13 @@ class Like extends Template
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param ScopeConfigInterface $scopeConfig
-     * @param UrlInterface $urlInterface
      * @param array $data
      */
     public function __construct(
         Context $context,
-        ScopeConfigInterface $scopeConfig,
-        UrlInterface $urlInterface,
         array $data
     ) {
         parent::__construct($context, $data);
-        $this->scopeConfig = $scopeConfig;
-        $this->urlInterface = $urlInterface;
     }
 
     public function getShowFaces()
